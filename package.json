@@ -1,0 +1,27 @@
+{
+  "name": "fetch-examples",
+  "version": "0.0.0",
+  "description": "A repository of Fetch examples",
+  "main": "worker.js",
+  "scripts": {
+    "start": "node worker",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xcatliu/fetch-examples.git"
+  },
+  "keywords": [
+    "fetch",
+    "fetch-examples"
+  ],
+  "author": "xcatliu <xcatliu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xcatliu/fetch-examples/issues"
+  },
+  "homepage": "https://github.com/xcatliu/fetch-examples#readme",
+  "dependencies": {
+    "ecstatic": "^1.2.0"
+  }
+}
