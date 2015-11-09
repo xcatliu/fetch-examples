@@ -1,0 +1,13 @@
+<script>
+  fetch('/api/post', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ hello: 'world' })
+  }).then(function(res) {
+    return res.json();
+  }).then(function(res) {
+    console.log(res);
+  });
+</script>

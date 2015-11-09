@@ -1,0 +1,19 @@
+<script>
+  var headers = new Headers({
+    'Content-Type': 'application/json',
+  });
+  headers.set('Content-Length', 1);
+  var req = new Request('/api/post', {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({ hello: 'world' })
+  });
+  fetch(req).then(function(res) {
+    res.headers.set('Set-Cookie', 'hello');
+    return res.json();
+  }).then(function(res) {
+    console.log(res);
+  }).catch(function(err) {
+    console.log(err);
+  });
+</script>

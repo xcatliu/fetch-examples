@@ -1,0 +1,22 @@
+<script>
+  var headers = new Headers({
+    'Content-Type': 'application/json'
+  });
+  console.log(headers.get('Content-Type'));
+  headers.append('Accept-Encoding', 'deflate');
+  console.log(headers.getAll('Accept-Encoding'));
+  headers.append('Accept-Encoding', 'gzip');
+  console.log(headers.getAll('Accept-Encoding'));
+  var req = new Request('/api/post', {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({ hello: 'world' })
+  });
+  fetch(req).then(function(res) {
+    return res.json();
+  }).then(function(res) {
+    console.log(res);
+  }).catch(function(err) {
+    console.log(err);
+  });
+</script>

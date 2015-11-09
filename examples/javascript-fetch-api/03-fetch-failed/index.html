@@ -1,0 +1,16 @@
+<script>
+  debugger
+  fetch('/api/404', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ hello: 'world' })
+  }).then(function(res) {
+    return res.json();
+  }).then(function(res) {
+    console.log(res);
+  }).catch(function(err) {
+    console.log('Catched Error: ' + err);
+  });
+</script>

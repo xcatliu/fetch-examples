@@ -1,0 +1,18 @@
+<script>
+  var headers = new Headers({
+    'Content-Type': 'application/json',
+  });
+  var req = new Request('http://localhost:8090/api/post', {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({ hello: 'world' }),
+    mode: 'cors'
+  });
+  fetch(req).then(function(res) {
+    return res.json();
+  }).then(function(res) {
+    console.log(res);
+  }).catch(function(err) {
+    console.log(err);
+  });
+</script>

@@ -1,0 +1,18 @@
+<script>
+  var req = new Request('/api/post', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ hello: 'world' })
+  });
+  fetch(req).then(function(res) {
+    console.log(res instanceof Response);
+    console.log(res);
+    return res.json();
+  }).then(function(res) {
+    console.log(res);
+  }).catch(function(err) {
+    console.log(err);
+  });
+</script>

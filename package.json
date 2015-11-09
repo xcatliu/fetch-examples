@@ -22,6 +22,10 @@
   },
   "homepage": "https://github.com/xcatliu/fetch-examples#readme",
   "dependencies": {
-    "ecstatic": "^1.2.0"
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "ecstatic": "^1.2.0",
+    "express": "^4.13.3",
+    "multer": "^1.1.0"
   }
 }
