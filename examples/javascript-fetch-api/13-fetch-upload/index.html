@@ -1,0 +1,24 @@
+<form method="POST" action="/api/upload">
+  <input type="file"/>
+  <input type="submit"/>
+</form>
+<script>
+  var form = document.getElementsByTagName('form')[0];
+  form.onsubmit = function(e) {
+    e.preventDefault();
+    var input = document.querySelector('input[type="file"]');
+    var data = new FormData();
+    data.append('file', input.files[0]);
+    data.append('name', 'hello');
+    fetch(form.action, {
+      method: 'POST',
+      body: data
+    }).then(function(res) {
+      return res.json();
+    }).then(function(res) {
+      console.log(res);
+    }).catch(function(err) {
+      console.log(err);
+    });
+  }
+</script>

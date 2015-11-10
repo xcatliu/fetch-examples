@@ -1,0 +1,22 @@
+<script>
+  fetch('/api/post', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ hello: 'world' })
+  }).then(function(res) {
+    var res2 = res.clone();
+    console.log(res.bodyUsed);
+    res.json();
+    console.log(res.bodyUsed);
+    console.log(res2.bodyUsed);
+    var r2 = res2.json();
+    console.log(res2.bodyUsed);
+    return r2;
+  }).then(function(res) {
+    console.log(res);
+  }).catch(function(err) {
+    console.log(err);
+  })
+</script>

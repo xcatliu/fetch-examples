@@ -23,6 +23,21 @@ app.post('/api/post', function(req, res) {
   res.end();
 });
 
+app.post('/api/upload', upload.single('file'), function(req, res) {
+  console.log(req.file);
+  console.log(req.body);
+  res.json({
+    file: req.file.originalname,
+    body: req.body
+  });
+  res.end();
+});
+
+app.all('*', function(req, res, next) {
+  console.log(req.url);
+  next();
+});
+
 app.use(ecstatic({ root: __dirname }));
 
 http.createServer(app).listen(8080);
